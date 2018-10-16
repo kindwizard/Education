@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Блочная верстка в HTML5</title>
+        <style>
+			* {
+				box-sizing: border-box;
+			}	
+			
+			html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, img, dl, dt, dd, 
+			ol, ul, li, form, table, caption, tr, th, td, article, aside, footer, header{
+							 
+				margin: 0;
+				padding: 0;
+				border: 0;
+				font-size: 100%;
+				vertical-align: baseline;
+			}			
+			
+            #sidebar{
+                float: left;
+                width: 25%;
+                padding: 10px;
+            }
+
+            #main{
+                border-left: 1px solid #ccc;
+                width:75%;
+                padding: 15px;
+                margin-left: 25%; 
+            }
+			
+			
+			
+			#header{
+                background-color: #eee;
+            }
+			//#header h1{
+			//	margin: 0px;
+			//	padding: 0px;
+			//	font-size: 100%;
+            //}
+			#header h1{
+				font-size: 1.3em;
+				padding: 15px;
+			}
+			
+            #nav{
+                background-color: #f4f4f4;
+                border-top: 1px solid #ccc;
+                border-bottom: 1px solid #ccc;
+            }
+            #nav ul{
+				margin: 0px;
+				padding: 0px;
+                list-style: none;
+            }
+            #nav li { 
+                float: left;
+            }
+            #nav ul a {
+                display: block;
+                width: 7em;
+                padding:10px;
+                border-left: 1px solid #ccc;
+                text-decoration: none;
+                color: #333;
+                text-align: center;
+            }
+            #nav ul li:last-child a {
+                 
+                border-right: 1px solid #ccc;
+            }
+            #nav ul a:hover{
+                background-color: #aaa;
+                color: #f4f4f4;
+            }
+			#nav ul::after {
+				content: " ";
+				display: table;
+				clear: both;
+			}
+			
+						
+        </style>
+    </head>
+    <body>
+		<div id="header">
+            <h1>Добро пожаловать на сайт</h1>
+            <div id="nav">
+                <ul>
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">Блог</a></li>
+                    <li><a href="#">Контакты</a></li>
+                    <li><a href="#">О сайте</a></li>
+                </ul>
+            </div>
+		</div>
+        <div id="content"><p>helo world</p></div>
+        <div id="sidebar">
+            <h2>The standard Lorem Ipsum passage</h2>
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+                eiusmod tempor incididunt ut labore et dolore...</p>
+        </div>
+        <div id="main">
+            <h2>What is Lorem Ipsum?</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry...</p>
+            <p>Contrary to popular belief, Lorem Ipsum is not simply random text..</p>
+        </div>
+    </body>
+</html>

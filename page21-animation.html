@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Анимация в CSS3</title>
+        <style>
+            @keyframes backgroundColorAnimation {
+               from {
+					background-color: red;
+					opacity: 0.2;
+				}
+				25%{
+					background-color: yellow;
+					opacity: 0.4;
+				}
+				50%{
+					background-color: green;
+					opacity: 0.6;
+				}
+				75%{
+					background-color: blue;
+					opacity: 0.8;
+				}
+				to {
+					background-color: violet;
+					opacity: 1;
+				}
+			}
+            div{
+                width: 100px;
+                height: 100px;
+                margin: 40px 30px;
+                border: 1px solid #333;
+                 
+                background-color: #ccc;
+				animation-fill-mode: forwards;                
+            }
+			div:hover {
+				animation-name: backgroundColorAnimation;
+                animation-duration: 2s;
+				animation-iteration-count: infinite;				
+			}
+        </style>
+    </head>
+    <body>
+        <div></div>
+    </body>
+</html>

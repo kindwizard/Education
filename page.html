@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Селекторы CSS</title>
+        <style>
+            #main p{
+                font-size: 16px;
+            }
+            #footer p{
+			    background-color: green;
+                font-size: 13px;
+            }
+			li .redLink{
+                color: red;
+            }
+			#main > p{
+             
+                color: green;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            <p>Первый абзац</p>
+            <p>Второй абзац</p>
+			<div class="article">
+               <p>Текст артикла</p>
+            </div>
+        </div>
+		<div>
+			<ul>
+				<li>Самсунг: <a class="redLink">Galaxy S7 Edge</a></li>
+				<li>Apple: <a>iPhome SE</a></li>
+				<li>LG: <a class="redLink">LG G5</a></li>
+				<li>Microsoft: <a>Lumia 650</a></li>
+			</ul>
+		</div>
+        <div id="footer">
+            <p>Текст футера</p>
+        </div>
+    </body>
+</html>

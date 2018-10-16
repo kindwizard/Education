@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Flexbox в CSS3</title>
+        <style>
+            .flex-container {
+                display: flex;
+                border:1px #ccc solid;
+            }
+			.container-small{
+				width:400px;
+			}
+			.container-column{
+				flex-direction: column;
+				height:300px;
+				width:200px;
+			}
+			
+            .flex-item {
+                text-align:center;
+                font-size: 1em;
+                padding: 1.2em;
+                color: white;
+            }
+			.flex-item-vertical {
+                text-align:center;
+                font-size: 1em;
+                padding: 1.2em;
+                color: white;
+            }
+			
+            .item1 {background-color: #675BA7; flex-basis: auto; width:150px;}
+            .item2 {background-color: #9BC850; flex-basis: auto; width:auto;}
+            .item3 {background-color: #A62E5C; flex-basis: 200px;width:150px;}
+			.item4 {background-color: #C66E5C; flex-basis: 15%;width:auto;}
+			
+			.item-shrink1 {background-color: #675BA7; flex-basis: 200px; flex-shrink:1;}
+            .item-shrink2 {background-color: #9BC850; flex-basis: 200px; flex-shrink:2;}
+            .item-shrink3 {background-color: #A62E5C; flex-basis: 200px; flex-shrink:3;}
+			
+			.item-grow1 {background-color: #675BA7; flex-grow:4;}
+            .item-grow2 {background-color: #9BC850; flex-grow:0;}
+            .item-grow3 {background-color: #A62E5C; flex-grow:2;}
+        </style>
+    </head>
+    <body>
+        <div class="flex-container">
+            <div class="flex-item item1">Flex Item 1</div>
+            <div class="flex-item item2">Flex Item 2</div>
+            <div class="flex-item item3">Flex Item 3</div>
+			<div class="flex-item item4">Flex Item 4</div>
+        </div>
+		</br>
+		
+		<div class="flex-container container-small">
+            <div class="flex-item item-shrink1">Flex Item 1</div>
+            <div class="flex-item item-shrink2">Flex Item 2</div>
+            <div class="flex-item item-shrink3">Flex Item 3</div>
+        </div>
+		</br>
+		
+		<div class="flex-container">
+            <div class="flex-item item-grow1">Flex Item 1</div>
+            <div class="flex-item item-grow2">Flex Item 2</div>
+            <div class="flex-item item-grow3">Flex Item 3</div>
+        </div>
+		</br>
+		
+		<div class="flex-container container-column">
+            <div class="flex-item item-shrink1">Flex Item 1</div>
+            <div class="flex-item item-shrink2">Flex Item 2</div>
+            <div class="flex-item item-shrink3">Flex Item 3</div>
+        </div>
+</html>

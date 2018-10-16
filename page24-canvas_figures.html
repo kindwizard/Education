@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Canvas в HTML5</title>
+    </head>
+    <body>
+        <canvas id="myCanvas" width="300" height="400"
+            style="background-color:#eee; border:1px solid #ccc;">
+            Ваш браузер не поддерживает Canvas
+        </canvas>
+		<canvas id="myCanvas2" width="400" height="400"
+            style="background-color:#eee; border:1px solid #ccc;">
+            Ваш браузер не поддерживает Canvas
+        </canvas>
+        <script>
+            var canvas = document.getElementById("myCanvas"), 
+                context = canvas.getContext("2d");
+            context.beginPath();
+			context.lineWidth = 3.5;
+            context.moveTo(30, 20);
+            context.lineTo(150, 140);
+            context.lineTo(250, 30);
+            context.closePath();
+            context.strokeStyle = "red";
+            context.stroke();
+			context.fill();
+			
+			context.beginPath();
+			context.moveTo(50, 190);
+			context.lineTo(110, 190);
+			context.lineTo(120, 220);
+			context.lineTo(50, 240);
+			context.closePath();			
+			context.clip();
+			
+			context.beginPath();
+            context.rect(30, 150, 100, 90);
+            context.closePath();
+            context.fillStyle = "blue";
+            context.fill();
+			
+			var canvas = document.getElementById("myCanvas2"), 
+                context = canvas.getContext("2d");
+				
+				context.beginPath();
+            context.moveTo(50, 90);
+            context.arc(50, 90, 50, 0, Math.PI/2, false);
+            context.closePath();
+            context.stroke();
+             
+            context.beginPath();
+            context.moveTo(180, 90);
+            context.arc(180, 90, 50, 0, Math.PI, true);
+            context.closePath();
+            context.stroke();
+             
+            context.beginPath();
+            context.moveTo(50, 220);
+            context.arc(50, 220, 50, 0, Math.PI * 3 / 2, false);
+            context.closePath();
+            context.stroke();
+             
+            context.beginPath();
+            context.arc(180, 220, 50, 0, Math.PI*2, false);
+            context.closePath();
+            context.stroke();
+        </script>
+    </body>
+</html>

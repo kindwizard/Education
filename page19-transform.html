@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Трансформации в CSS3</title>
+        <style>
+            div{
+                background-color: #ccc;
+                width: 120px;
+                height: 120px;
+                margin:5px;
+                padding: 40px 10px;
+                box-sizing: border-box;
+                border: 1px solid #333;
+                display: inline-block;
+            }
+            .rotated{ 
+				transform-origin: right top;
+                transform: rotate(40deg);
+            }
+			.halfScale{
+                transform: scale(0.5);
+            }
+            .doubleScale{
+                transform: scale(1.5) rotate(122deg);
+            }
+			.scale1{
+                transform: scaleX(-1);
+            }
+			.translated{
+                transform: translate(20px, 10px);
+                background-color:red;
+            }
+			.skewed{
+                transform: skew(30deg, 10deg);
+                background-color:green;
+            }
+        </style>
+    </head>
+    <body>
+        <div></div>
+        <div class="rotated">rotate(122deg)</div>
+        <div></div>
+        <div class="doubleScale">scale(2)</div>
+        <div></div>
+        <div class="halfScale">scale(0.5)</div>
+        <div></div>
+        <div class="scale1">scaleX(-1)</div>		
+		<div></div>
+        <div class="translated"></div>
+        <div></div>
+        <div class="skewed"></div>		
+    </body>
+</html>

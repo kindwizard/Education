@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Стилизация таблиц в CSS3</title>
+        <style>
+		div{
+            width: 200px;
+            height: 100px;
+            background-color: #eee;
+			float:left;
+			margin:5px;
+		}
+        div.first {
+            background-image: linear-gradient(bottom right,yellow,green);
+            background-image: -o-linear-gradient(bottom right,yellow,green);
+            background-image: -moz-linear-gradient(bottom right,yellow,green);
+            background-image: -webkit-linear-gradient(bottom right,yellow,green);
+
+        }
+		div.second {
+            background-image: linear-gradient(190deg,yellow,blue,green);
+            background-image: -o-linear-gradient(190deg,yellow,blue,green);
+            background-image: -moz-linear-gradient(190deg,yellow,blue,green);
+            background-image: -webkit-linear-gradient(190deg,yellow 20%,blue 30%,green);
+        }
+        p{
+            margin: 0;
+            padding-top: 30px;
+            text-align: center;
+            color:white;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="first"><p>Линейный черно-белый градиент</p></div>
+		<div class="second"><p>Линейный черно-белый градиент</p></div>
+    </body>
+</html>

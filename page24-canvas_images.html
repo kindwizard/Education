@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Canvas в HTML5</title>
+    </head>
+    <body>
+	 
+        <canvas id="myCanvas" width="700" height="410"
+            style="background-color:#eee; border:1px solid #ccc;">
+            Ваш браузер не поддерживает Canvas
+        </canvas>
+		<video id="myVideo" src="trucks.mp4" width="300" height="200" controls ></video>
+		<canvas id="myCanvas2" width="400" height="200"
+            style="background-color:#eee; border:1px solid #ccc;">
+            Ваш браузер не поддерживает Canvas
+        </canvas>
+		<div>
+            <button id="snap">Сделать снимок</button>
+        </div>
+        <script>
+            var canvas = document.getElementById("myCanvas"), 
+                context = canvas.getContext("2d");
+                 
+            var img = new Image();
+            img.src = "dubi.png";
+            img.onload = function() {
+			
+				context.shadowOffsetX = 8;
+                context.shadowOffsetY = 8;
+                context.shadowBlur = 5;
+                context.shadowColor = "#333";
+				
+                context.drawImage(img, 20, 10, 250, 190);
+				context.drawImage(img, 20, 210, 250, 190);
+				context.drawImage(img, 64, 48, 128, 96, 350, 10, 206, 142);
+            };
+			
+			var canvas2 = document.getElementById("myCanvas2"), 
+               context2 = canvas2.getContext("2d");
+			var video = document.getElementById("myVideo");
+			document.getElementById("snap").onclick = function(e) {
+                context2.drawImage(video, 0, 0, 300, 200);
+				}
+        </script>
+    </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width" />
+        <title>Grid Layout в CSS3</title>
+        <style>
+            .grid-container {
+                border: solid 2px #000;
+                display: inline-grid;
+				margin:10px;
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: repeat(3, 5em);
+            }
+            .special-item{
+                grid-column-start:2;
+                grid-column-end: 5;
+            }
+			.special-item2{
+                grid-column-start:4;
+                grid-column-end: 5;
+            }
+			.special-item3{
+                grid-row-start:2;
+                grid-row-end: 4;
+            }
+			.special-item4{
+				grid-row: 1 / span 2;
+				grid-column: 2 / span 2;
+			}
+			.special-item5{
+				grid-area: 2 / 2 / 4 / 5;
+			}
+            .grid-item {
+                text-align:center;
+                font-size: 1.1em;
+                padding: 1.5em;
+                color: white;
+            }
+            .color1 {background-color: #675BA7;}
+            .color2 {background-color: #9BC850;}
+            .color3 {background-color: #A62E5C;}
+            .color4 {background-color: #2A9FBC;}
+            .color5 {background-color: #4e342e;}
+        </style>
+    </head>
+    <body>
+        <div class="grid-container">
+            <div class="grid-item color1">Grid Item 1</div>
+            <div class="grid-item color2 special-item">Grid Item 2</div>
+            <div class="grid-item color3 special-item3">Grid Item 3</div>
+            <div class="grid-item color4">Grid Item 4</div>
+            <div class="grid-item color5 special-item2">Grid Item 5</div>
+            <div class="grid-item color1">Grid Item 6</div>
+            <div class="grid-item color4">Grid Item 7</div>
+        </div></br>
+		<div class="grid-container">
+            <div class="grid-item color1">Grid Item 1</div>
+            <div class="grid-item color2 special-item4">Grid Item 2</div>
+            <div class="grid-item color3">Grid Item 3</div>
+            <div class="grid-item color4">Grid Item 4</div>
+            <div class="grid-item color5">Grid Item 5</div>
+            <div class="grid-item color1">Grid Item 6</div>
+            <div class="grid-item color4">Grid Item 7</div>
+        </div></br>
+		<div class="grid-container">
+            <div class="grid-item color1">Grid Item 1</div>
+            <div class="grid-item color2 special-item5">Grid Item 2</div>
+            <div class="grid-item color3">Grid Item 3</div>
+            <div class="grid-item color4">Grid Item 4</div>
+            <div class="grid-item color5">Grid Item 5</div>
+            <div class="grid-item color1">Grid Item 6</div>
+            <div class="grid-item color4">Grid Item 7</div>
+        </div>
+    </body>
+</html>

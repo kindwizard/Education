@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Переход в CSS3</title>
+        <style>
+            .redCube{
+                width: 100px;
+                height: 100px;
+                margin: 40px 30px;
+                border: 1px solid #333;
+                 
+                background-color: #ccc;
+                transition-property: background-color, transform;
+                transition-duration: 2s, 5s;
+				transition-delay: 500ms;
+            }
+            .redCube:hover{
+                background-color: red;
+				transform: rotate(360deg);
+            }
+			.redCube2{
+                width: 100px;
+                height: 100px;
+                margin: 40px 30px;
+                border: 1px solid #333;
+                 
+                background-color: #ccc;
+                transition-property: background-color, width;
+                transition-duration: 2s, 3s;
+                transition-timing-function: ease;
+            }
+            .redCube2:hover{
+                background-color: red;
+				width: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="redCube"></div>
+		<div class="redCube2"></div>
+    </body>
+</html>

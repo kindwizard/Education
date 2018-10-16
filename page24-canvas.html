@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Canvas в HTML5</title>
+    </head>
+    <body>
+        <canvas id="myCanvas" width="650" height="500"
+                style="background-color:#eee; border: 1px solid #ccc;">
+            Ваш браузер не поддерживает Canvas
+        </canvas>
+        <script>
+            var canvas = document.getElementById("myCanvas"), 
+                context = canvas.getContext("2d");
+                 
+			context.strokeStyle = "red";
+            context.fillStyle = "blue";
+			context.lineWidth = 6.5;
+			
+            context.strokeRect(50, 40, 100, 100);
+            context.fillRect(200, 40, 100, 100);
+			context.clearRect(250,90,40,40);
+			
+			context.strokeStyle = ("rgb(0, 105, 0)");
+			context.lineWidth = 2.5;
+			context.setLineDash([2,5,7,6]);
+			
+			context.strokeRect(50, 200, 100, 100);
+			
+			context.setLineDash([0]);
+			
+			context.lineWidth = 15;
+            context.lineJoin = "miter";
+            context.strokeRect(40, 340, 100, 100);
+            context.lineJoin = "bevel";
+            context.strokeRect(180, 340, 100, 100);
+            context.lineJoin = "round";
+            context.strokeRect(310, 340, 100, 100);
+						
+			context.fillStyle = "pink";
+			context.fillRect(200, 200, 100, 100);
+			context.globalAlpha = 0.2;
+			context.fillStyle = "grey";
+			context.fillRect(250, 190, 100, 100);
+			
+			var img = new Image();
+            img.src = "dubi.png";
+            img.onload = function() {
+                 
+                var pattern = context.createPattern(img, "repeat");
+				context.globalAlpha = 1;
+				context.lineWidth = 1;
+				
+                context.fillStyle = pattern;
+                context.fillRect(400, 40, 150, 150);
+                context.strokeRect(400, 40, 150, 150);
+            };
+        </script>
+    </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="styles.css" rel="stylesheet">
+        <title>Свойство display в CSS3</title>
+        <style>
+            span{
+                color: red;
+                width: 100px;
+                height: 30px;				
+            }
+            .blockSpan{
+                display: block;
+            }
+			.stringdiv{
+                display: inline;
+            }
+            .inineBlockSpan{
+                display: inline-block;
+				background-color: orange;
+            }	
+            ul{
+                display: table;
+                margin: 0;
+            }
+            li{
+                list-style-type: none;
+                display: table-cell;
+                padding: 10px;
+            }			
+        </style>
+    </head>
+    <body>
+        <div>Это <span>строчный</span> элемент span</div>
+        <div>Это <span class="blockSpan">блочный</span> элемент span</div>
+		<div class="stringdiv">Это строчный элемент div 1 </div>
+		<div class="stringdiv">Это строчный элемент div 2</div><br/><br/>
+		<p>Проехав с полверсты в хвосте <span>колонны</span>, он остановился</p>
+        <p>Проехав с полверсты в хвосте <span class="inineBlockSpan">колонны</span>, он остановился</p>
+		<ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+    </body>
+</html>
