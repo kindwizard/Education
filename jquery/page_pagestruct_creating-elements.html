@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Мир jQuery</title>
+	</head>
+	<body>
+		<ul id="langs">
+			<li>Java</li>
+			<li>C/C++</li>
+			<li>PHP</li>
+		</ul>    
+		<button class="b1">K1</button>
+		<button class="b2">K2</button>
+		<button class="b3">K3</button>		
+		<script src="jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('button.b1').click(function(){
+					var newList=$('<ul><li>Item1</li><li>Item2</li></ul>');
+					$('body').prepend(newList);
+				});
+
+				$('button.b2').click(function(){
+					var jsItem = document.createElement('li');
+					jsItem.innerHTML='JavaScript';
+					$('#langs').append(jsItem);
+				});
+				
+				$('button.b3').click(function(){
+				// вставка в элемент html
+				var list = document.getElementById('langs');
+				$('<li>JavaScriptTo</li>').appendTo(list);
+				});				
+			});
+		</script>
+	</body>
+</html>

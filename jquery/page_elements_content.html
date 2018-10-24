@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Мир jQuery</title>
+	</head>
+	<body>
+        <ul class="menu">
+			<li>Пункт 1</li>
+			<li>Пункт 2
+				<ul class="submenu">
+					<li>Подпункт 2.1</li>
+					<li>Подпункт 2.2</li>
+				</ul>
+			</li>
+			<li>Пункт 3
+				<ul>
+					<li>Подпункт 3.1</li>
+					<li>Подпункт 3.2</li>
+				</ul>
+			</li>
+		</ul>	
+		<h2 class="header">Заголовок</h2>
+		<ul class="menu2">
+			<li class="punkt1">Пункт 1</li>
+			<li class="punkt2">Пункт 2
+				<ul class="submenu">
+					<li>Подпункт 2.1</li>
+					<li>Подпункт 2.2</li>
+				</ul>
+			</li>
+			<li class="punkt3">Пункт 3</li>
+		</ul>	
+		<input type="text" value="Введите значение" /></br></br>
+		<button class="b1">Разметка</button>
+		<button class="b2">Текст</button>
+		<button class="b3">Текст</button>
+		<script src="jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				// получение разметки для элемента списка и вывод ее в консоль
+				var html = $('li.punkt2').html();
+				console.log(html);
+					 
+				$('button.b1').click(function(){
+						// установка новой разметки элемента списка
+						$('li.punkt1').html("Пункт 1 <ul class='submenu'><li>Подпункт 1.1</li></ul>")
+						var oldHtml = $('h2.header').html();
+						$('h2.header').html(oldHtml+"<p> Новый параграф</p>")
+				});
+				
+				$('button.b2').click(function(){										 
+						$('p').text("Название статьи");
+				});
+				
+				$('button.b3').click(function(){					
+						$('input[type="text"]').first().val("Введите логин");
+				});
+			});
+		</script>
+	</body>
+</html>

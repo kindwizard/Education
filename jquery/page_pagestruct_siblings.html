@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Мир jQuery</title>
+	</head>
+	<style>
+		.redStyle {
+			color:red;
+			border-style: solid;
+			border-width: 1px;
+			border-color: green;
+		}
+	</style>	
+	<body>
+		<ul id="langs">
+			<li class="lang">Java</li>
+			<li class="lang">C/C++</li>
+			<li class="lang">PHP</li>
+		</ul>  
+		<button class="b1">K1</button>
+		<button class="b2">K2</button>
+		<button class="b3">K3</button>		
+		<script src="jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('button.b1').click(function(){
+					$('li.lang').first().before('<li class="lang">JavaScript</li>');	
+				});					
+			
+				$('button.b2').click(function(){	
+					$('li.lang').first().after('<li class="lang">Visual Basic</li>');
+				});
+				$('button.b3').click(function(){	
+					$('<li class="lang">JavaScript 2</li>').insertBefore('li.lang:first');
+					$('<li class="lang">JavaScript 3</li>').insertAfter('li.lang:last');					
+				});	
+			});		
+		</script>
+	</body>
+</html>

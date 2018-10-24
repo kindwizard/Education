@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Мир jQuery</title>
+	</head>
+		<body>
+		<table>
+			<tr><td>Слово</td><td>Перевод</td></tr>
+			<tr><td>Cabbage</td><td>Капуста</td></tr>
+			<tr><td>Carrot</td><td>Морковь</td></tr>
+			<tr><td>Potato</td><td>Картофель</td></tr>
+			<tr><td>Tomato</td><td>Помидор</td></tr>
+			</table>
+			<br>
+			<button class="b1">Выделить</button>
+			<button class="b2">Снять выделение</button></br>
+			<button class="b4">Жми 4</button>
+			<button class="b5">Жми 5</button>
+		</body>		
+		<script src="jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('table').on('mouseenter', 'td', function(e){
+					$(this).css('background-color', 'silver');
+				}).on('mouseout', 'td', function(e){
+					$(this).css('background-color', 'white');
+				});
+				 
+				$('button.b1').first().bind('click', function(){
+					$('td').trigger('mouseenter');
+				});
+				 
+				$('button.b2').last().bind('click', function(){
+					$('td').trigger('mouseout');
+				});
+			});
+		</script>
+</html>

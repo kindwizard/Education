@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Мир jQuery</title>
+	</head>
+	<body>
+		<ul class="menu">
+			<li>Пункт 1</li>
+			<li>Пункт 2
+				<ul class="submenu">
+					<li>Подпункт 2.1</li>
+					<li>Подпункт 2.2</li>
+				</ul>
+			</li>
+			<li>Пункт 3
+				<ul>
+					<li>Подпункт 3.1</li>
+					<li>Подпункт 3.2</li>
+				</ul>
+			</li>
+		</ul>	
+		<h2 class="header">Заголовок</h2>
+		<ul class="menu2">
+			<li class="punkt1">Пункт 1</li>
+			<li class="punkt2">Пункт 2
+				<ul class="submenu">
+					<li>Подпункт 2.1</li>
+					<li>Подпункт 2.2</li>
+				</ul>
+			</li>
+			<li class="punkt3">Пункт 3</li>
+		</ul>		
+		<script src="jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				// дочерние узлы без селектора
+				var lists = $('ul.menu li').children('');
+				lists.each(function(index, elem){
+					$(elem).css('color','blue');
+				});
+				 
+				//дочерние узлы по селектору
+				var lists2 = $('ul.menu li').children('.submenu');
+				lists2.each(function(index, elem){
+					$(elem).css('background-color','red');
+				});
+				
+				// без селектора
+				var lists3 = $('li.punkt1').nextAll();
+				lists3.each(function(index, elem){
+					$(elem).css('color','cyan');
+				});
+				 
+				// c селектором
+				var lists4 = $('li.punkt1').nextAll('.punkt3');
+				lists4.each(function(index, elem){
+					$(elem).css('background-color','gold');
+				});	
+
+				var list5 = $('li.punkt2').prevAll();
+				list5.each(function(index, elem){
+					$(elem).css('color','brown');
+				});				
+			});
+		</script>
+	</body>
+</html>

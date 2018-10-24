@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Мир jQuery</title>
+	</head>
+		<body>
+			<div>
+				<button class="b1">Жми</button>
+				<button class="b2">Жми</button>
+			</div>
+		</body>		
+		<script src="jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+				$(function(){
+					$('button.b1').bind('click', function(e){
+						console.log('Событие инициировал элемент ' + e.target.tagName);
+						console.log('Событие обрабатывается для элемента ' + e.currentTarget.tagName + " B1");
+					});
+					$('button.b2').bind('click', function(e){
+						console.log('Событие инициировал элемент ' + e.target.tagName);
+						console.log('Событие обрабатывается для элемента ' + e.currentTarget.tagName + " B2");
+						e.stopPropagation();
+					});
+					$('div').bind('click', function(e){
+						console.log('Событие инициировал элемент ' + e.target.tagName);
+						console.log('Событие обрабатывается для элемента ' + e.currentTarget.tagName);
+					});
+					$('body').bind('click', function(e){
+						console.log('Событие инициировал элемент ' + e.target.tagName);
+						console.log('Событие обрабатывается для элемента ' + e.currentTarget.tagName);
+					});
+				});
+		</script>
+</html>

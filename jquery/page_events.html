@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Мир jQuery</title>
+	</head>
+	<style>
+		.redStyle {
+			color:red;
+			border-style: solid;
+			border-width: 1px;
+			border-color: green;
+		}
+	</style>	
+	<body>
+		<button class="b1">K1</button>
+		<button class="b2">K2</button>
+		<button class="b3">K3</button>		
+		<script src="jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('button').bind('click', function(){
+					if($(this).hasClass("b2")){
+						$('body').append('<ul><li>Java</li><li>JavaScript</li></ul>');
+					}
+					alert('Обработчик события click');
+				});
+				$('button.b1').unbind();
+				$('button.b3').one('click', function(e){
+					$(this).css('color', 'red');
+					alert('Обработчик для кнопки: '+$(this).text());
+				});
+			});	
+		</script>
+	</body>
+</html>

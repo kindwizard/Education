@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Мир jQuery</title>
+	</head>
+	<body>
+		<button class="b1">K1</button>
+		<button class="b2">K2</button>
+		<button class="b3">K3</button>		
+		<script src="jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+				$(function(){
+					$(document).bind('keydown', function(e){ 
+						alert(e.which);
+					});
+					var mes = 'Привет мир!';
+					$('button').bind('click', mes, function(e){
+							alert(e.data + e.target);
+						});
+				});
+		</script>
+	</body>
+</html>

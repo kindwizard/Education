@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Мир jQuery</title>
+	</head>
+		<body>
+			<button class="b1">Жми 1</button>
+			<button class="b2">Жми 2</button></br>
+			<button class="b4">Жми 4</button>
+			<button class="b5">Жми 5</button>
+		</body>		
+		<script src="jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('body').delegate('button.b3','click', function(e){
+					$(this).css('color', 'red');
+					alert('Обработчик для кнопки: '+$(this).text());
+				});
+				$('button.b2').click(function(){
+					$('body').append('<button class="b3">Жми 3</button>');
+				});	
+				$('button.b1').click(function(){
+					$('body').undelegate('button.b3','click');
+				});	
+
+				$('body').on('click', 'button.b6', function(e){
+					$(this).css('color', 'red');
+					alert('Обработчик для кнопки: '+$(this).text());
+				});
+				$('button.b5').click(function(){
+					$('body').append('<button class="b6">Жми 6</button>');
+				});	
+				$('button.b4').click(function(){
+					$('body').off('click','button.b6');
+				});	
+			});
+		</script>
+</html>

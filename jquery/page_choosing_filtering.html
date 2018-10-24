@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Мир jQuery</title>
+	</head>
+	<body>
+		<table class="el1">
+			<tr class="header"><td>Слово</td><td>Перевод</td></tr>
+			<tr><td>Cabbage</td><td>Капуста</td></tr>
+			<tr><td>Carrot</td><td>Морковь</td></tr>
+			<tr  class="header2"><td>Potato</td><td>Картофель</td></tr>
+			<tr><td>Tomato</td><td>Помидор</td></tr>
+		</table></br>
+		<table class="el2">
+			<tr><td>Слово</td><td>Перевод</td></tr>
+			<tr><td>Cabbage</td><td>Капуста</td></tr>
+			<tr><td>Carrot</td><td>Морковь</td></tr>
+			<tr class="header"><td>Potato</td><td>Картофель</td></tr>
+			<tr><td>Tomato</td><td>Помидор</td></tr>
+		</table>
+		<ul class="li1">
+			<li>Пункт 1</li>
+			<li>Пункт 2
+				<ul>
+					<li>Подпункт 2.1</li>
+					<li>Подпункт 2.2</li>
+				</ul>
+			</li>
+			<li>Пункт 3</li>
+		</ul>		
+		<ul class="li2">
+			<li>Пункт 1</li>
+			<li>Пункт 2
+				<ul>
+					<li>Подпункт 2.1</li>
+					<li>Подпункт 2.2</li>
+				</ul>
+			</li>
+			<li>Пункт 3</li>
+		</ul>	
+		<ul class="menu">
+			<li>Пункт 1</li>
+			<li>Пункт 2
+				<ul class="submenu">
+					<li>Подпункт 2.1</li>
+					<li>Подпункт 2.2</li>
+				</ul>
+			</li>
+			<li>Пункт 3</li>
+		</ul>		
+		<script src="jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				//Фильтрация по селектору
+				var array = $(".header").filter("table.el1 tr");
+				array.css('background-color', 'silver');
+				 
+				// Фильтрация по элементу html
+				var elem = document.getElementsByTagName("tr")[0];
+				var array1 = $(".header").filter(elem);
+				array1.css('background-color', 'silver');
+				
+				
+				var array2 = $("tr").filter(function(){
+					if($(this).hasClass("header2")) { return true;}
+					else {return false;}
+				});
+				array2.css('background-color', 'gold');
+				
+				$(function(){
+					var array = $("table.el2 tr").not(function(){
+						if($(this).hasClass("header")) { return true;}
+						else {return false;}
+					});
+					array = array.slice(1);
+					array.css('background-color', 'red');
+				});	
+				
+				var array3 = $("ul.li1 li");			
+				array3.has('ul').css('color', 'blue');
+				
+				$(function(){
+				 
+					var array = $('li').map(function(index,elem){
+						return $(elem).children()[0];
+					});
+					 
+					array.each(function(index, elem){
+						console.log(elem.innerHTML);
+					});
+					array.css('background-color', 'silver');
+				});		
+								
+			});
+		</script>
+	</body>
+</html>

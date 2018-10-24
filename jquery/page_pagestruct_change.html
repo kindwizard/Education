@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Мир jQuery</title>
+	</head>
+	<style>
+		.redStyle {
+			color:red;
+			border-style: solid;
+			border-width: 1px;
+			border-color: green;
+		}
+	</style>	
+	<body>
+		<div id="list">
+			<div class="lang">Java</div>
+			<div class="lang">C/C++</div>
+			<div class="lang">PHP</div>
+		</div>
+		<button class="b1">K1</button>
+		<button class="b2">K2</button>
+		<button class="b3">K3</button>		
+		<script src="jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('button.b1').click(function(){	
+					$('div.lang').first().replaceWith('<div class="lang">JavaScript</div>');				
+				});	
+				$('button.b2').click(function(){	
+					$('div.lang').replaceWith(function() {
+							return '<li class="lang">'+$(this).text()+"</li>";
+					});
+					$('div#list').replaceWith(function() {
+							return '<ol id="list">'+$(this).html()+"</ol>";
+					});				
+				});	
+				$('button.b3').click(function(){	
+					$('<li class="lang">Элемент списка</li>').replaceAll('li.lang');						
+				});	
+			});		
+		</script>
+	</body>
+</html>
