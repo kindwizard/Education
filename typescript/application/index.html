@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Модули в TypeScript</title>
+</head>
+<body>
+    <h1>Модули в TypeScript</h1>
+  
+    <div id="content"></div>
+	<button class="b1">Set Info</button>	
+	<button class="b2">Get Info</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.21.0/system.js"></script>
+    <script>
+        SystemJS.config({
+            baseURL: "app",
+            packages: {
+                "/": { defaultExtension: "js" }
+            }
+        });
+        System.import("app.js");
+    </script>
+</body>
+</html>
